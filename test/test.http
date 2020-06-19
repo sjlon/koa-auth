@@ -1,19 +1,19 @@
 @url = http://localhost:3001/api
 @json = Content-Type: application/json
 ###
-get {{url}}?user=小刘&age=12
+get {{url}}/user?user=小刘&age=12
 
 ###
-post {{url}}/register
+post {{url}}/user/register
 {{json}}
 
 {
-    "username": "user1",
+    "username": "wangmin",
     "password": "123456"
 }
 
 ###
-POST {{url}}/login
+POST {{url}}/user/login
 {{json}}
 
 {

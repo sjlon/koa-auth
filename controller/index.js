@@ -1,16 +1,13 @@
 const Router = require('@koa/router')
-const User = require('../model/user.schma')
+const userCtr = require('./user.controller')
 const router = new Router({
 	prefix: '/api',
 })
 
-router.get('/', async ctx => {
-	ctx.body = ctx.query
-})
-router.post('/register', async ctx => {
-	const user = await User.create({
-		...ctx.request.body,
-	})
-	ctx.body = user
-})
+const routerBuilder = (namespace, ctr) => {
+	router.use(namespace, ctr.routes(), ctr.allowedMethods())
+}
+
+routerBuilder('/user', userCtr.userRouter)
+
 module.exports = router
