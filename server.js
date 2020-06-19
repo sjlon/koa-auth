@@ -1,9 +1,8 @@
 const Koa = require('koa')
 const app = new Koa()
 const bodyParser = require('koa-bodyparser')
-require('./db')
 app.use(bodyParser())
-const router = require('./router')
+const router = require('./controller/index')
 
 app.use(router.routes()).use(router.allowedMethods())
 app.listen(3001, () => {

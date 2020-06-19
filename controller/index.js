@@ -1,5 +1,5 @@
 const Router = require('@koa/router')
-const User = require('./model/user.schma')
+const User = require('../model/user.schma')
 const router = new Router({
 	prefix: '/api',
 })
