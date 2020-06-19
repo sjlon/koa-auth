@@ -22,6 +22,17 @@ const register = async (ctx, params) => {
 		isSuccess: true,
 	}
 }
+
+async function login(ctx, data) {
+	const { username, password } = data
+	const userData = await User.findOne({ username })
+	if (!userData || (userData && userData.password !== password)) {
+		ctx.body = {
+			msg: '用户名或者密码错误',
+			isSuccess: false,
+		}
+	}
+}
 module.exports = {
 	register,
 }

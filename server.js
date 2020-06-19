@@ -1,5 +1,7 @@
 const Koa = require('koa')
+var gzip = require('koa-gzip')
 const app = new Koa()
+app.use(gzip())
 const bodyParser = require('koa-bodyparser')
 app.use(bodyParser())
 const router = require('./controller/index')
