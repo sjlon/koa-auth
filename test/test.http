@@ -1,14 +1,17 @@
 @url = http://localhost:3001/api
 @json = Content-Type: application/json
+
+@Authorization= Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2FuZzE0MSIsIl9pZCI6IjVlZjdmY2NiMWIyYTc1NDdlYzhlYWMzYSIsImlhdCI6MTU5MzMxNjI1MiwiZXhwIjoxNTkzMzIzNDUyfQ.9JYhMEL3FvxlM0qiEb_UMYO5r3s3woPz0ehcWg6-Hec
 ###
 get {{url}}/user?user=小刘&age=12
+{{Authorization}}
 
 ###
 post {{url}}/user/register
 {{json}}
 
 {
-    "username": "wangmin",
+    "username": "wang141",
     "password": "123456"
 }
 
@@ -17,6 +20,6 @@ POST {{url}}/user/login
 {{json}}
 
 {
-    "username": "user1",
+    "username": "wang141",
     "password": "123456"
 }
